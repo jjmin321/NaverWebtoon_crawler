@@ -1,0 +1,1 @@
+# Naver Webtoon All rating crawler - 12/16/2019 ~
