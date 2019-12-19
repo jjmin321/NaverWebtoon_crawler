@@ -164,7 +164,7 @@ func main() {
 	fmt.Println("root : ", root)
 	urlList := scrape.FindAll(root, parseMainNodes)
 
-	//월요일 웹툰들 전부 긁어와서 for range로 순회
+	//웹툰들 전부 긁어와서 for range로 순회
 	for _, link := range urlList {
 		// //대상 URL 출력
 		// fmt.Println("Mon Link : ", link, idx)
