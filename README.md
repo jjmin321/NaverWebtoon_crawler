@@ -141,5 +141,8 @@ func parseStarNodes(n *html.Node) bool {
 
 <img width="1440" alt="Screen Shot 2019-12-19 at 19 59 29" src="https://user-images.githubusercontent.com/52072077/71168499-318f3c00-229a-11ea-9004-84e12504b3dc.png">
 
+### 😞아쉬웠던 점 
+19살이 안되서 19금웹툰은 못 들어갔다 ㅠ
+
 
 
