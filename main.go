@@ -45,7 +45,7 @@ func parseSubNodes(n *html.Node) bool {
 
 //<div class="..." id="topTotalStarPoint"> 가 있는 코드들 긁어오는 함수
 func parseStarNodes(n *html.Node) bool {
-	return n.DataAtom == atom.Dd && scrape.Attr(n, "class") == "total"
+	return n.DataAtom == atom.Div && scrape.Attr(n, "id") == "topTotalStarPoint"
 }
 
 //에러체크할 함수 선언하여 계속 사용해줌.
@@ -59,6 +59,7 @@ func errCheck(err error) {
 func scrapRatingType(href, fn string) {
 	//작업 종료 알림
 	defer wg.Done()
+	mutex.Unlock()
 
 	//GET 방식 요청
 	response, err := http.Get(urlSubRoot + href)
@@ -76,7 +77,7 @@ func scrapRatingType(href, fn string) {
 	errCheck(err)
 
 	//파일 스크림 생성(열기) -> 파일명, 옵션, 권한
-	file, err := os.OpenFile("/Users/jejeongmin/documents/go/src/NaverWebtoon_crawler/Scrape/"+fn+".txt", os.O_CREATE|os.O_RDWR, os.FileMode(0777))
+	file, err := os.OpenFile("/Users/jejeongmin/documents/go/src/NaverWebtoon_crawler/Scrape/"+fn+".txt", os.O_APPEND|os.O_CREATE|os.O_RDWR, os.FileMode(0777))
 	//에러체크
 	errCheck(err)
 
@@ -136,6 +137,7 @@ func scrapContents(href, fn string) {
 	for _, link := range recentList {
 		//동기화
 		wg.Add(1)
+		mutex.Lock()
 		//해당 데이터 출력
 		go scrapRatingType(scrape.Attr(link, "href"), fn)
 		//파싱 데이터 -> 버퍼에 기록
