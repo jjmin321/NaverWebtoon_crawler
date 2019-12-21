@@ -1,4 +1,4 @@
-# Naver Webtoon All rating crawler - 12/16/2019 ~ 12/19/2019
+# 🖼️ Naver Webtoon All rating crawler - 12/16/2019 ~ 12/19/2019
 
 ⭐요일별 모든 웹툰들의 전체 화의 평점을 각 파일별로 나누어 크롤링해오는 프로그램⭐
 
@@ -23,7 +23,7 @@ const (
 > 4일차 - 👨‍💻마지막으로 파일 입출력 처리에 관한 문제를 발견하고 오류 수정<br/>
 
 
-### 모든 웹툰을 고루틴을 통해 이동하는 코드
+### 🧵 모든 웹툰을 고루틴을 통해 이동하는 코드
 
 ```go
 //class가 title인(모든) 웹툰들 대상으로 원하는 URL파싱 후 반환하는 함수
@@ -57,14 +57,14 @@ urlList := scrape.FindAll(root, parseMainNodes)
 ```
 <img width="1440" alt="Screen Shot 2019-12-19 at 20 26 54" src="https://user-images.githubusercontent.com/52072077/71170170-f131bd00-229d-11ea-935c-0daf82572cc9.png">
 
-### 고루틴이 있다면 동기화가 필수
+### ✅ 고루틴이 있다면 동기화가 필수
 ```go
 //동기화를 위한 작업 그룹 선언
 var wg sync.WaitGroup
 var mutex = &sync.Mutex{}
 ```
 
-### GO언어를 사용한다면 에러체크도 필수 
+### 👉 GO언어를 사용한다면 에러체크도 필수 
 ```go
 //에러체크할 함수 선언하여 계속 사용해줌.
 func errCheck(err error) {
@@ -74,7 +74,7 @@ func errCheck(err error) {
 }
 ```
 
-### 모든 웹툰의 최근 10화 웹툰을 고루틴을 통해 들어가는 코드
+### 🧵 모든 웹툰의 최근 10화 웹툰을 고루틴을 통해 들어가는 코드
 ```go
 //<td class="title"> 최근 10화 웹툰 사이트들 태그 긁어오는 함수
 func parseSubNodes(n *html.Node) bool {
@@ -105,7 +105,7 @@ recentList := scrape.FindAll(root, parseSubNodes)
 
 <img width="1440" alt="Screen Shot 2019-12-19 at 20 26 19" src="https://user-images.githubusercontent.com/52072077/71170174-f2fb8080-229d-11ea-9d89-ad3484194c3d.png">
 
-### 웹툰들의 평점과 참여자 수 정보를 가지고오는 코드
+### 👨‍💻 웹툰들의 평점과 참여자 수 정보를 가지고오는 코드
 
 ```go
 //<div class="..." id="topTotalStarPoint"> 가 있는 코드들 긁어오는 함수
@@ -116,7 +116,7 @@ func parseStarNodes(n *html.Node) bool {
 
 <img width="1440" alt="Screen Shot 2019-12-19 at 20 26 41" src="https://user-images.githubusercontent.com/52072077/71170177-f4c54400-229d-11ea-8e2f-49b2800e23df.png">
 
-### 웹툰이름.txt 파일에 평점과 참여자 수를 자동으로 작성해주는 코드
+### 🗒️ 웹툰이름.txt 파일에 평점과 참여자 수를 자동으로 작성해주는 코드
 ```go
 //파일 스크림 생성(열기) -> 파일명, 옵션, 권한
 	file, err := os.OpenFile("/Users/jejeongmin/documents/go/src/NaverWebtoon_crawler/Scrape/"+fn+".txt", os.O_APPEND|os.O_CREATE|os.O_RDWR, os.FileMode(0777))
@@ -140,9 +140,6 @@ func parseStarNodes(n *html.Node) bool {
 
 
 <img width="1440" alt="Screen Shot 2019-12-19 at 19 59 29" src="https://user-images.githubusercontent.com/52072077/71168499-318f3c00-229a-11ea-9004-84e12504b3dc.png">
-
-### 😞아쉬웠던 점 
-19살이 안되서 19금웹툰은 못 들어갔다 ㅠ
 
 
 
