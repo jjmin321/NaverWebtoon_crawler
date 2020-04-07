@@ -1,6 +1,6 @@
 <div align="center">
   
-![GitHub contributors](https://img.shields.io/github/contributors/jjmin321/NaverWebtoon_crawlerjjmin321/NaverWebtoon_crawler)
+![GitHub contributors](https://img.shields.io/github/contributors/jjmin321/NaverWebtoon_crawler)
 ![GitHub forks](https://img.shields.io/github/forks/jjmin321/NaverWebtoon_crawler?label=Forks)
 ![GitHub stars](https://img.shields.io/github/stars/jjmin321/NaverWebtoon_crawler?style=Stars)
 ![GitHub issues](https://img.shields.io/github/issues-raw/jjmin321/NaverWebtoon_crawler)
