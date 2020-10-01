@@ -1,14 +1,4 @@
-<div align="center">
-  
-![GitHub contributors](https://img.shields.io/github/contributors/jjmin321/NaverWebtoon_crawler)
-![GitHub forks](https://img.shields.io/github/forks/jjmin321/NaverWebtoon_crawler?label=Forks)
-![GitHub stars](https://img.shields.io/github/stars/jjmin321/NaverWebtoon_crawler?style=Stars)
-![GitHub issues](https://img.shields.io/github/issues-raw/jjmin321/NaverWebtoon_crawler)
-[![Go Report Card](https://goreportcard.com/badge/github.com/jjmin321/NaverWebtoon_crawler)](https://goreportcard.com/report/github.com/jjmin321/NaverWebtoon_crawler)
-
-</div>
-
-# 🖼️ Naver Webtoon All rating crawler
+# Naver Webtoon All rating crawler
 
 ⭐요일별 모든 웹툰들의 전체 화의 평점을 각 파일별로 나누어 크롤링해오는 프로그램⭐
 
@@ -20,13 +10,16 @@ const (
 	urlSubRoot = "https://comic.naver.com"
 )
 ```
-### 📦패키지  
-```go
-"github.com/yhat/scrape"
-"golang.org/x/net/html"
-"golang.org/x/net/html/atom"
-```
 
+
+## Stack
+|           |     Crawler      |
+|:---------:|:---------:|
+| Developer | 제정민 | 
+| Develop Language | GO |  
+| Develop Tool     | Visual Studio Code|
+
+### 프로젝트 진행 단계   
 > 1일차 - 🌟네이버 웹툰 메인페이지서 모든 웹툰을 고루틴(쓰레드)를 통해 이동 후 페이지 평점 정보를 가지고 옴.<br/>
 > 2일차 - 🤹생각보다 너무 쉬워서 모든 웹툰의 최근 10화를 고루틴(쓰레드)를 통해 2차 이동 후 참여자 수도 가지고 옴.<br/>
 > 3일차 - 🐛자꾸 에러가 떠서 로그를 찍어보다가 19금 웹툰에서 막히는 것을 발견하고 고침<br/>
