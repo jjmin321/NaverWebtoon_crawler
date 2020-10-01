@@ -1,16 +1,6 @@
 # Naver Webtoon All rating crawler
 
-⭐요일별 모든 웹툰들의 전체 화의 평점을 각 파일별로 나누어 크롤링해오는 프로그램⭐
-
-```go
-//스크래핑 대상 URL
-
-const (
-	urlRoot    = "https://comic.naver.com/webtoon/weekday.nhn"
-	urlSubRoot = "https://comic.naver.com"
-)
-```
-
+요일별 모든 웹툰들의 전체 화의 평점을 각 파일별로 나누어 크롤링해오는 프로그램
 
 ## Stack
 |           |     Crawler      |
